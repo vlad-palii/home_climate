@@ -25,7 +25,7 @@ SECRET_KEY = 'tt6p19gpmz0#+$y%yiz8#fgl)38r*^lftt1y03i%!z3mn#8fkk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,10 +52,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'home_dummy.urls'
 
+TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
