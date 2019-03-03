@@ -26,10 +26,3 @@ def index(request):
     result = read_serial_port_once()
     if result != "":
         return HttpResponse(result)
-
-def about(request):
-    return HttpResponse("<h2>О сайте</h2>")
-
-
-def contact(request):
-    return HttpResponse("<h2>Контакты</h2>")
