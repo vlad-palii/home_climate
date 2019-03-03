@@ -14,11 +14,9 @@ def read_serial_port_once():
             ser.read_until('Start', 124)
             result = ser.readline()
             if result != "":
-                #print(result.decode().strip(), "try")
                 return result.decode().strip()
         finally:
             if result != "":
-                #print(result.decode().strip(), "fin")
                 return result.decode().strip()
 
 
