@@ -23,4 +23,4 @@ def read_serial_port_once():
             print("Data read error")
 
 
-read_serial_port_once()
+
