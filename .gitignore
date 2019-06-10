@@ -1,2 +1,3 @@
 /venv/*
 /home_dummy/home_dummy/__pycache__/*
+/node_modules
