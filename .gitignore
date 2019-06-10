@@ -1,5 +1,2 @@
-venv/
-/venv/
-/venv/*
-/venv/**
-home_dummy/home_dummy/__pycache__/**
+venv/*
+home_dummy/home_dummy/__pycache__/*
