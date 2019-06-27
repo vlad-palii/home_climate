@@ -1,33 +1,60 @@
-.App {
+body {
+  background: #e2e1e0;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.card {
+  background: #fff;
+  border-radius: 2px;
+  margin: 1rem;
+  position: relative;
+  border: none;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text-center {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.background-image-card {
+  height: 35em;
+  filter: grayscale(50%);
+}
+
+.health-leaf {
+  background-image: url('health-leaf.jpg')
+}
+.sick-leaf {
+  background-image: url('sick-leaf.jpg') 
+}
+.dead-leaf {
+  background-image: url('dead-leaf.jpg')
+}
+
+.sensor-info {
+  background: white;
+  width: 40em;
+  height: 15em;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border-radius: 8px;
+  position: absolute;
+  padding: 2em;
+  text-align: left;
+}
+
+.main-counter {
+  font-weight: 700;
+  margin-right: .5em;
+}
+
+.sensor-info h1, 
+.sensor-info h4 {
+  display: inline;
+
+}
+
+.sensor-info h4 {
+  color: grey;
 }
