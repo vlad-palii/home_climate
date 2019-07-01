@@ -29,11 +29,19 @@ function App() {
     return new Promise(resolve => {
 
       let temp;
-      var data = request.get('  https://air.jl5.technology//data/get-data?sensor_id=124&start=1550487267000&end=1550746129000&asd=0.19944643446510346&callback=jQuery33106081911132130127_1561569989695&_=1561569989707')
+      //var data = request.get('https://cors-anywhere.herokuapp.com/https://air.jl5.technology//data/get-data?sensor_id=124&start=1550487267000&end=1550746129000&asd=0.19944643446510346&callback=jQuery33106081911132130127_1561569989695&_=1561569989707')
+      
+      var data = request.get('"https://air-quality.p.rapidapi.com/current/airquality?lon=-50.45&lat=30.51"')
+      //.set('RapidAPI Project', 'default-application_3809344')
+      .set('X-RapidAPI-Host', 'air-quality.p.rapidapi.com')
+      .set('X-RapidAPI-Key', '56b2ffec95mshf62c64f3e9e9da4p153e43jsn9cba904cec4b')
+
       data.then(res => {
-        let tempPos = res.text.indexOf("1575630000000,")
-        temp = res.text.substring(tempPos+14);
-        resolve(parseFloat(temp));
+        // let tempPos = res.text.indexOf("1575630000000,")
+        // temp = res.text.substring(tempPos+14);
+        // resolve(parseFloat(temp));
+        resolve();
+        console.log(res)
       })
 
     });
