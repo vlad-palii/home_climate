@@ -1,6 +1,7 @@
 body {
   background: #e2e1e0;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .card {
@@ -11,7 +12,7 @@ body {
   border: none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .text-center {
@@ -19,7 +20,8 @@ body {
 }
 
 .background-image-card {
-  height: 35em;
+  /* height: 35em; */
+  height: 25em;
   filter: grayscale(50%);
 }
 
@@ -42,11 +44,12 @@ body {
   position: absolute;
   padding: 2em;
   text-align: left;
+  margin-top: 3em;
 }
 
 .main-counter {
   font-weight: 700;
-  margin-right: .5em;
+  margin-right: .1em;
 }
 
 .sensor-info h1, 
@@ -57,4 +60,10 @@ body {
 
 .sensor-info h4 {
   color: grey;
+}
+
+.sensor-description {
+  font-size: 4em;
+  text-align: center;
+  font-weight: bold;
 }
