@@ -9,22 +9,25 @@ function App() {
   return (
 
     <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/air-quality-pet">Air Quality Pet</Link>
-        </li>
-      </ul>
-
-      <hr />
-
-      <Route exact path="/" component={Home} />
-      <Route exact path="/air-quality-pet" component={AirQuality} />
-
-    </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li class="nav-item">
+              <Link className="nav-link" to="/air-quality-pet">Air Quality Pet</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+    <Route exact path="/" component={Home} />
+    <Route exact path="/air-quality-pet" component={AirQuality} />
   </Router>
 
   );
