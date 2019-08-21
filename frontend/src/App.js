@@ -18,10 +18,10 @@ function App() {
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="">CV</NavLink>
+              <NavLink exact className="nav-link" activeClassName="active" to="/">CV</NavLink>
             </li>
             <li class="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/air-quality-pet">Air Quality Pet</NavLink>
+              <NavLink exact className="nav-link" activeClassName="active" to="/air-quality-pet">Air Quality Pet</NavLink>
             </li>
           </ul>
         </div>
