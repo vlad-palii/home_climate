@@ -1,5 +1,5 @@
 import React, { useState, useEffect }  from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import request from 'superagent'
 import './App.css';
@@ -17,11 +17,11 @@ function App() {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <Link className="nav-link" to="/">CV</Link>
+            <li class="nav-item">
+              <NavLink className="nav-link" activeClassName="active" to="">CV</NavLink>
             </li>
             <li class="nav-item">
-              <Link className="nav-link" to="/air-quality-pet">Air Quality Pet</Link>
+              <NavLink className="nav-link" activeClassName="active" to="/air-quality-pet">Air Quality Pet</NavLink>
             </li>
           </ul>
         </div>
