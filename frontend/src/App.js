@@ -10,17 +10,17 @@ function App() {
   return (
 
     <Router>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" href="#"></a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
               <NavLink exact className="nav-link" activeClassName="active" to="/">CV</NavLink>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink exact className="nav-link" activeClassName="active" to="/air-quality-pet">Air Quality Pet</NavLink>
             </li>
           </ul>
@@ -39,12 +39,10 @@ export default App;
 export function AirQuality () {
 
   let [leafType, setLeafType] = useState("health-leaf");
-  // let [co2Level, setCo2Level] = useState("0");
-  // let [co2Level, setCo2Level] = useState("0");
-  
   let [airVisualData, setAirVisualData] = useState("0");
   let [waqiData, setWaqiData] = useState("0");
   let [indexDescription, setIndexDescription] = useState("Processing..."); 
+  let [currentPosition, setCurrentPosition] = useState("Detecting position...");
 
   function setDescriptionByCO2(co2Level) {
     if(co2Level > 0 < 50) {
@@ -77,27 +75,37 @@ export function AirQuality () {
       setAirVisualData(JSON.parse(api[0].text).data.current.pollution.aqius);
       setWaqiData(JSON.parse(api[1].text).data.aqi);
       setDescriptionByCO2(JSON.parse(api[0].text).data.current.pollution.aqius); 
-      console.log(JSON.parse(api[1].text).data.aqi); //JSON.parse(result.text).data
-
     }
 
     getAllData();
 
-    //async function getLevel (){
-      //result = await getO2Level()
-      //aqi = JSON.parse(result.text).data.current.pollution.aqius;
-      //setCo2Level(aqi);   
-      //setDescriptionByCO2(co2Level);
-    //}
+    function getCurrentPosition(options = {}) {
+      return new Promise((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject, options);
+      });
+    };
 
-    //getLevel();
-     
+    let fetchCoordinates = async () => {
+      try {
+          let { coords } = await getCurrentPosition();
+          let { latitude, longitude } = coords;
+
+          // Handle coordinates
+          setCurrentPosition([latitude.toFixed(3), longitude.toFixed(3)].join(", "))
+
+      } catch (error) {
+          // Handle error
+          console.error(error);
+      }
+  };
+
+  fetchCoordinates();
+
   });
 
   function getO2Level () {
 
     return new Promise(resolve => {
-      //b299f1a9-393a-4774-9e6c-29b7fbb7d051 - first key
       //37bff4af-0639-4402-a226-e188eb44984e - new key
       request.get("http://api.airvisual.com/v2/city?city=kyiv&state=Kyiv&country=Ukraine&key=37bff4af-0639-4402-a226-e188eb44984e")
       .then(res => {
@@ -130,6 +138,8 @@ export function AirQuality () {
           <h1 className="main-counter">{waqiData} of 500</h1><h4>WAQI</h4><br/>
           <p className="sensor-description">{`${indexDescription}`}</p>
         </div>
+
+        <h3>{ `${currentPosition}` }</h3>
       </Col>
     </Row>
   </Container>
