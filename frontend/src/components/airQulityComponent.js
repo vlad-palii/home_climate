@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import request from 'superagent'
-import './../App.css';
+import './../App.scss';
 import UserLocationComponent from './userLocationComponent'
 
 export default function AirQuality() {

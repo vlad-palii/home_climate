@@ -438,7 +438,7 @@ module.exports = function(webpackEnv) {
               // See https://github.com/webpack/webpack/issues/6571
               sideEffects: true,
             },
-            // Adds support for CSS Modules, but using SASS
+                        // Adds support for CSS Modules, but using SASS
             // using the extension .module.scss or .module.sass
             {
               test: sassModuleRegex,
@@ -451,6 +451,11 @@ module.exports = function(webpackEnv) {
                 },
                 'sass-loader'
               ),
+            },
+            {
+              test: /\.scss$/,
+              loader: ['sass-loader'],
+              exclude: [/\.scss$/]
             },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
