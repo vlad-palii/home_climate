@@ -25,10 +25,10 @@ export default function App() {
           </ul>
         </div>
       </nav>
-    
-    <Route exact path="/" component={Home} />
-    <Route exact path="/air-quality-pet" component={AirQuality} />
-  </Router>
+
+      <Route exact path="/" component={Home} />
+      <Route exact path="/air-quality-pet" component={AirQuality} />
+    </Router>
 
   );
 }
