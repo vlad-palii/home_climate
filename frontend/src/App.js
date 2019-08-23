@@ -7,7 +7,7 @@ import AirQuality from './components/airQulityComponent'
 export default function App() {
 
   return (
-
+    <div id="app" className="synthwave-i">
     <Router>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#"></a>
@@ -30,5 +30,6 @@ export default function App() {
       <Route exact path="/air-quality-pet" component={AirQuality} />
     </Router>
 
+    </div>
   );
 }

@@ -1,5 +1,4 @@
 body {
-  
   font-family: 'Roboto', sans-serif;
 }
 
@@ -12,6 +11,7 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   align-items: center;
   /* justify-content: center; */
+  border-radius: 35px;
 }
 
 .text-center {
@@ -20,8 +20,8 @@ body {
 
 .background-image-card {
   /* height: 35em; */
-  height: 25em;
-  filter: grayscale(50%);
+  height: 40em;
+  /* filter: grayscale(50%); */
 }
 
 .health-leaf {
@@ -39,7 +39,7 @@ body {
   width: 40em;
   height: 15em;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  border-radius: 8px;
+  border-radius: 25px;
   position: absolute;
   padding: 2em;
   text-align: left;
@@ -184,3 +184,14 @@ h2, h5{
   right: 0em;
   top: 0em;
 }
+
+.synthwave-i {
+  height: 100vh;
+  background: linear-gradient(45deg, #A254D0, #9519B1, #820FA2, #610C8E, #56108C, #400772);
+}
+
+/* // Your variable overrides */
+$body-bg: #9519B1;
+
+// Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap";
