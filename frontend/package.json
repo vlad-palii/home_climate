@@ -61,7 +61,7 @@
     "superagent": "^5.1.0",
     "terser-webpack-plugin": "1.2.3",
     "ts-pnp": "1.1.2",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "url-loader": "1.1.2",
     "webpack": "4.29.6",
     "webpack-dev-server": "3.2.1",
